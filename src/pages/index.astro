@@ -1,0 +1,178 @@
+
+
+---
+	import faviconPng from "../assets/favicon-75x75.png";
+	import heroImage from "../assets/picture.jpg";
+	import { Icon } from "astro-icon/components";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" sizes="75x75" href={faviconPng.src} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Antonio Rey | Próximamente</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				color: #f3f3f3;
+				background: #060606;
+				display: flex;
+				min-height: 100vh;
+			}
+
+			main {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: clamp(1.5rem, 6vw, 3rem);
+			}
+
+			.page {
+				display: flex;
+				width: min(100%, 56rem);
+				min-height: clamp(24rem, 60vh, 32rem);
+				border-radius: 1.25rem;
+				overflow: hidden;
+				background: rgba(12, 12, 12, 0.85);
+				border: 1px solid rgba(255, 255, 255, 0.05);
+				box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+			}
+
+			.hero-image {
+				flex: 1.1;
+				position: relative;
+			}
+
+			.hero-image::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(90deg, rgba(6, 6, 6, 0.65), transparent 55%);
+			}
+
+			.hero-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.hero-text {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 1.25rem;
+				padding: clamp(1.75rem, 5vw, 3rem);
+				background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 55%);
+			}
+
+			.hero-text h1 {
+				margin: 0;
+				font-size: clamp(2rem, 4vw, 2.75rem);
+				line-height: 1.1;
+			}
+
+			.hero-text p {
+				margin: 0;
+				max-width: 32ch;
+				font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+				opacity: 0.82;
+			}
+
+			.social {
+				display: flex;
+				gap: 0.85rem;
+				margin-top: 0.5rem;
+			}
+
+			.social a {
+				width: 2.25rem;
+				height: 2.25rem;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				color: #ffffff;
+				opacity: 0.75;
+				transition: opacity 0.2s ease, transform 0.2s ease;
+			}
+
+			.social a:hover {
+				opacity: 1;
+				transform: translateY(-2px);
+			}
+
+			.social [data-icon] {
+				width: 1.75rem;
+				height: 1.75rem;
+				color: currentColor;
+			}
+
+			.badge {
+				display: inline-block;
+				padding: 0.3rem 0.65rem;
+				border: 1px solid rgba(255, 255, 255, 0.25);
+				border-radius: 999px;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				font-size: 0.7rem;
+				opacity: 0.65;
+			}
+
+			@media (max-width: 900px) {
+				.page {
+					flex-direction: column;
+					min-height: auto;
+				}
+
+				.hero-image::after {
+					background: linear-gradient(180deg, rgba(6, 6, 6, 0.45), transparent 45%);
+				}
+
+				.hero-text {
+					padding: clamp(1.75rem, 7vw, 3rem);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<section class="page">
+				<div class="hero-image">
+					<img src={heroImage.src} alt="Retrato de Antonio Rey" />
+				</div>
+				<div class="hero-text">
+						<span class="badge">Sitio en mantenimiento</span>
+						<h1>Estamos trabajando en una nueva experiencia</h1>
+						<p>
+							Gracias por tu paciencia. Muy pronto volveremos con novedades y toda la energía
+							que nos caracteriza.
+						</p>
+						<p>Mientras tanto, seguiremos afinando cada detalle para recibirte como mereces.</p>
+						<div class="social">
+							<a href="https://www.instagram.com/antonio_rey_flamenco/" aria-label="Instagram" target="_blank" rel="noreferrer">
+								<Icon name="simple-icons:instagram" aria-hidden="true" />
+							</a>
+							<a href="https://www.facebook.com/AntonioReyOficial/" aria-label="Facebook" target="_blank" rel="noreferrer">
+								<Icon name="simple-icons:facebook" aria-hidden="true" />
+							</a>
+							<a href="https://www.youtube.com/channel/UCPuY_pQsz4tfdPH11XkXR9g" aria-label="YouTube" target="_blank" rel="noreferrer">
+								<Icon name="simple-icons:youtube" aria-hidden="true" />
+							</a>
+							<a href="https://open.spotify.com/intl-es/artist/5IRSZuGnF84xSdWWGe6jDl?si=Gl7UbQlaRQepsMtdBWletw&nd=1&dlsi=625c001308d846a7" aria-label="Spotify" target="_blank" rel="noreferrer">
+								<Icon name="simple-icons:spotify" aria-hidden="true" />
+							</a>
+						</div>
+					</div>
+			</section>
+		</main>
+	</body>
+</html>
